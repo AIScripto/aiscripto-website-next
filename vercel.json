@@ -1,0 +1,101 @@
+{
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=31536000; includeSubDomains; preload"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://tagmanager.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' data: https://fonts.gstatic.com; frame-src 'self' https://voiceagent-aiscripto.vercel.app; connect-src 'self' https://aiscripto-email-server.vercel.app https://voiceagent-aiscripto.vercel.app https://www.google-analytics.com https://*.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://www.google.com https://stats.g.doubleclick.net https://*.doubleclick.net; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
+        }
+      ]
+    },
+    {
+      "source": "/voice",
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "frame-ancestors 'self' https://aiscripto.com https://www.aiscripto.com http://localhost:5173 http://localhost:3000"
+        }
+      ]
+    },
+    {
+      "source": "/voice/(.*)",
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "frame-ancestors 'self' https://aiscripto.com https://www.aiscripto.com http://localhost:5173 http://localhost:3000"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/service/custom-software-development",
+      "destination": "/services/software",
+      "permanent": true
+    },
+    {
+      "source": "/service/:slug*",
+      "destination": "/services/:slug*",
+      "permanent": true
+    },
+    {
+      "source": "/products/ai-pos",
+      "destination": "/products/pos-restaurant",
+      "permanent": true
+    },
+    {
+      "source": "/products/calibr",
+      "destination": "/products",
+      "permanent": true
+    },
+    {
+      "source": "/services/erp/odoo-implementation",
+      "destination": "/services/erp",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/ai-voice-receptionist-healthcare",
+      "destination": "/products/ai-voice-booking",
+      "permanent": true
+    },
+    {
+      "source": "/services/cloud/finops-cost-optimization",
+      "destination": "/services/cloud",
+      "permanent": true
+    },
+    {
+      "source": "/blog/erp-crm-accounting-integration-guide",
+      "destination": "/services/erp",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ai-agents-vs-chatbots-enterprise",
+      "destination": "/services/ai",
+      "permanent": true
+    },
+    {
+      "source": "/company",
+      "destination": "/about",
+      "permanent": true
+    }
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false
+}

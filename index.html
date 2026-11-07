@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en" class="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.svg" />
+  <script>
+    (function () {
+      try {
+        var isExplicit = localStorage.getItem('theme_explicit') === 'true';
+        var saved = localStorage.getItem('theme');
+        // An explicit choice wins; otherwise follow the visitor's system setting.
+        var systemLight = !isExplicit && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+        if ((isExplicit && saved === 'light') || systemLight) {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.classList.add('light');
+        } else {
+          document.documentElement.classList.remove('light');
+          document.documentElement.classList.add('dark');
+        }
+        var accent = localStorage.getItem('accent_theme');
+        if (accent && /^(teal|cobalt|indigo|violet|emerald|amber|rose|slate)$/.test(accent)) {
+          document.documentElement.setAttribute('data-accent', accent);
+        } else {
+          document.documentElement.setAttribute('data-accent', 'teal');
+        }
+      } catch (e) {
+        document.documentElement.classList.add('dark');
+      }
+    })();
+  </script>
+
+  <!-- Security Headers -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Content-Security-Policy is sent as an HTTP header (vercel.json), not a meta tag. -->
+
+  <title>AIScripto — Enterprise AI Engineering, Cloud Solutions & Digital Delivery</title>
+  <meta name="description"
+    content="AIScripto engineers production-ready AI agents, resilient cloud infrastructure, custom software, and modern business applications for enterprises and growing businesses worldwide." />
+
+  <!-- Base Organization & WebSite Structured Data -->
+  <script type="application/ld+json" id="organization-website-schema">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://www.aiscripto.com/#organization",
+          "name": "AIScripto",
+          "legalName": "AIScripto",
+          "url": "https://www.aiscripto.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "@id": "https://www.aiscripto.com/#logo",
+            "url": "https://www.aiscripto.com/favicon.svg",
+            "caption": "AIScripto"
+          },
+          "image": {
+            "@id": "https://www.aiscripto.com/#logo"
+          },
+          "description": "Global enterprise technology solutions and AI product engineering partner building autonomous AI agents, ERP/CRM integrations, custom software, and cloud modernization.",
+          "telephone": "+1-425-554-1783",
+          "email": "support@aiscripto.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "7034 Sacramento Dr",
+            "addressLocality": "Tracy",
+            "addressRegion": "CA",
+            "postalCode": "95377",
+            "addressCountry": "US"
+          },
+          "sameAs": [
+            "https://www.linkedin.com/company/aiscripto/",
+            "https://www.facebook.com/profile.php?id=61590698113621"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.aiscripto.com/#website",
+          "url": "https://www.aiscripto.com/",
+          "name": "AIScripto",
+          "description": "Enterprise AI Engineering, Cloud Solutions & Digital Delivery",
+          "publisher": {
+            "@id": "https://www.aiscripto.com/#organization"
+          }
+        }
+      ]
+    }
+    </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    window.gtag = gtag;
+
+    var analyticsLoaded = false;
+    function loadAnalytics() {
+      if (analyticsLoaded) return;
+      analyticsLoaded = true;
+      ['scroll', 'pointerdown', 'touchstart', 'keydown'].forEach(function (ev) {
+        window.removeEventListener(ev, loadAnalytics);
+      });
+      var script = document.createElement('script');
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZGG48Z60PZ';
+      script.async = true;
+      document.head.appendChild(script);
+
+      gtag('js', new Date());
+      gtag('config', 'G-ZDN3RE88L3', { anonymize_ip: true });
+      gtag('config', 'G-ZGG48Z60PZ', { anonymize_ip: true });
+    }
+
+    ['scroll', 'pointerdown', 'touchstart', 'keydown'].forEach(function (ev) {
+      window.addEventListener(ev, loadAnalytics, { passive: true, once: true });
+    });
+
+    window.addEventListener('load', function () {
+      if ('requestIdleCallback' in window) {
+        window.requestIdleCallback(function () {
+          setTimeout(loadAnalytics, 3500);
+        });
+      } else {
+        setTimeout(loadAnalytics, 4000);
+      }
+    });
+  </script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
+</html>

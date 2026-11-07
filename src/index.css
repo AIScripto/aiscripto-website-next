@@ -1,0 +1,459 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Self-hosted variable fonts (see main.tsx): Inter for text, Space Grotesk for headings. */
+  --font-sans: "Inter Variable", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk Variable", "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --color-brand-primary: hsl(var(--primary));
+  --color-brand-secondary: var(--color-brand-secondary, #0ea5e9);
+  --color-brand-accent: hsl(var(--primary));
+  /* Text-safe brand colours: darker in light mode (WCAG AA on white), bright in dark mode. */
+  --color-brand-primary-ink: var(--brand-primary-ink);
+  --color-brand-secondary-ink: var(--brand-secondary-ink);
+  /* Text/icon colour on a filled brand-secondary surface (accent buttons). */
+  --color-brand-secondary-foreground: var(--brand-secondary-foreground, #020617);
+
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+}
+
+@layer base {
+  :root {
+    --background: 210 25% 97.5%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    /* Default Teal Palette */
+    --primary: 172 75% 26%;
+    --primary-foreground: 0 0% 100%;
+    --brand-primary-ink: hsl(172 75% 26%);
+    --brand-secondary-ink: #0284c7;
+    --color-brand-secondary: #0ea5e9;
+    --secondary: 199 89% 48%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 214 25% 92%;
+    --muted-foreground: 215.4 18% 40%;
+    --accent: 172 45% 94%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 215 20% 88%;
+    --input: 215 20% 88%;
+    --ring: 172 75% 26%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 224 45% 4.5%;
+    --foreground: 210 40% 98%;
+    --card: 224 35% 8.5%;
+    --card-foreground: 210 40% 98%;
+    --popover: 224 35% 8.5%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 172 65% 50%;
+    /* Every dark-mode accent primary is bright (L 48-67%), so dark ink is the
+       only foreground that clears WCAG AA (white sits at 1.1-3.7:1). */
+    --primary-foreground: 224 45% 4.5%;
+    --brand-primary-ink: #2dd4bf;
+    --brand-secondary-ink: #38bdf8;
+    --color-brand-secondary: #38bdf8;
+    --secondary: 199 89% 60%;
+    --secondary-foreground: 224 45% 4.5%;
+    --muted: 224 25% 12%;
+    --muted-foreground: 218 16% 65%;
+    --accent: 172 45% 15%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 224 25% 16%;
+    --input: 224 25% 16%;
+    --ring: 172 65% 50%;
+  }
+
+  /* Multi-Theme Accent Palettes */
+  /* Teal (Signature Enterprise) */
+  [data-accent="teal"] {
+    --primary: 172 75% 26%;
+    --brand-primary-ink: hsl(172 75% 26%);
+    --brand-secondary-ink: #0284c7;
+    --color-brand-secondary: #0ea5e9;
+    --ring: 172 75% 26%;
+  }
+  .dark[data-accent="teal"], [data-accent="teal"].dark, [data-accent="teal"] .dark {
+    --primary: 172 65% 50%;
+    --brand-primary-ink: #2dd4bf;
+    --brand-secondary-ink: #38bdf8;
+    --color-brand-secondary: #38bdf8;
+    --ring: 172 65% 50%;
+  }
+
+  /* Cobalt (Cloud Scale & Silicon Valley Enterprise) */
+  [data-accent="cobalt"] {
+    --primary: 221 83% 53%;
+    --brand-primary-ink: hsl(221 83% 45%);
+    --brand-secondary-ink: #0284c7;
+    --color-brand-secondary: #38bdf8;
+    --accent: 221 85% 95%;
+    --ring: 221 83% 53%;
+  }
+  .dark[data-accent="cobalt"], [data-accent="cobalt"].dark, [data-accent="cobalt"] .dark {
+    --primary: 217 91% 60%;
+    --brand-primary-ink: #60a5fa;
+    --brand-secondary-ink: #38bdf8;
+    --color-brand-secondary: #60a5fa;
+    --accent: 221 50% 16%;
+    --ring: 217 91% 60%;
+  }
+
+  /* Violet (Cognitive AI & Neural Architectures) */
+  [data-accent="violet"] {
+    --primary: 262 83% 48%;
+    --brand-primary-ink: hsl(262 83% 44%);
+    --brand-secondary-ink: #c026d3;
+    --color-brand-secondary: #d946ef;
+    --accent: 262 70% 95%;
+    --ring: 262 83% 48%;
+  }
+  .dark[data-accent="violet"], [data-accent="violet"].dark, [data-accent="violet"] .dark {
+    --primary: 262 83% 66%;
+    --brand-primary-ink: #a78bfa;
+    --brand-secondary-ink: #e879f9;
+    --color-brand-secondary: #c084fc;
+    --accent: 262 50% 16%;
+    --ring: 262 83% 66%;
+  }
+
+  /* Emerald (FinTech & Sovereign Security) */
+  [data-accent="emerald"] {
+    --primary: 160 84% 28%;
+    --brand-primary-ink: hsl(160 84% 25%);
+    --brand-secondary-ink: #059669;
+    --color-brand-secondary: #10b981;
+    --accent: 160 60% 94%;
+    --ring: 160 84% 28%;
+  }
+  .dark[data-accent="emerald"], [data-accent="emerald"].dark, [data-accent="emerald"] .dark {
+    --primary: 160 70% 48%;
+    --brand-primary-ink: #34d399;
+    --brand-secondary-ink: #6ee7b7;
+    --color-brand-secondary: #34d399;
+    --accent: 160 45% 14%;
+    --ring: 160 70% 48%;
+  }
+
+  /* Amber (High-Velocity Analytics & Operations) */
+  [data-accent="amber"] {
+    --primary: 38 92% 38%;
+    /* White on this amber is ~3.6:1; dark ink is ~5.8:1. */
+    --primary-foreground: 224 45% 4.5%;
+    --brand-primary-ink: hsl(38 92% 28%);
+    --brand-secondary-ink: #c2410c;
+    --color-brand-secondary: #f59e0b;
+    --accent: 38 85% 93%;
+    --ring: 38 92% 38%;
+  }
+  .dark[data-accent="amber"], [data-accent="amber"].dark, [data-accent="amber"] .dark {
+    --primary: 42 96% 55%;
+    --brand-primary-ink: #fbbf24;
+    --brand-secondary-ink: #fb923c;
+    --color-brand-secondary: #f59e0b;
+    --accent: 42 50% 16%;
+    --ring: 42 96% 55%;
+  }
+
+  /* Rose (Crimson Pulse - SecOps & Threat Intel) */
+  [data-accent="rose"] {
+    --primary: 346 84% 45%;
+    --brand-primary-ink: hsl(346 84% 40%);
+    --brand-secondary-ink: #be123c;
+    --color-brand-secondary: #f43f5e;
+    --accent: 346 70% 95%;
+    --ring: 346 84% 45%;
+  }
+  .dark[data-accent="rose"], [data-accent="rose"].dark, [data-accent="rose"] .dark {
+    --primary: 346 87% 62%;
+    --brand-primary-ink: #fb7185;
+    --brand-secondary-ink: #fda4af;
+    --color-brand-secondary: #fb7185;
+    --accent: 346 50% 16%;
+    --ring: 346 87% 62%;
+  }
+
+  /* Slate (Stealth Obsidian - Minimalist Tech) */
+  [data-accent="slate"] {
+    --primary: 222 47% 11%;
+    --brand-primary-ink: hsl(222 47% 11%);
+    --brand-secondary-ink: #475569;
+    --color-brand-secondary: #334155;
+    --brand-secondary-foreground: #ffffff;
+    --accent: 215 25% 92%;
+    --ring: 222 47% 11%;
+  }
+  .dark[data-accent="slate"], [data-accent="slate"].dark, [data-accent="slate"] .dark {
+    --primary: 210 40% 96%;
+    --brand-primary-ink: #f8fafc;
+    --brand-secondary-ink: #cbd5e1;
+    --color-brand-secondary: #e2e8f0;
+    --brand-secondary-foreground: #020617;
+    --accent: 215 25% 16%;
+    --ring: 210 40% 96%;
+  }
+
+  /* Indigo (Deep Indigo - Developer Ecosystem) */
+  [data-accent="indigo"] {
+    --primary: 239 84% 52%;
+    --brand-primary-ink: hsl(239 84% 48%);
+    --brand-secondary-ink: #0284c7;
+    --color-brand-secondary: #6366f1;
+    --brand-secondary-foreground: #ffffff;
+    --accent: 239 85% 95%;
+    --ring: 239 84% 52%;
+  }
+  .dark[data-accent="indigo"], [data-accent="indigo"].dark, [data-accent="indigo"] .dark {
+    --primary: 239 84% 67%;
+    --brand-primary-ink: #818cf8;
+    --brand-secondary-ink: #38bdf8;
+    --color-brand-secondary: #818cf8;
+    --brand-secondary-foreground: #020617;
+    --accent: 239 50% 16%;
+    --ring: 239 84% 67%;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Display face for headings; body text stays in Inter. */
+  h1, h2, h3 {
+    font-family: var(--font-display);
+  }
+
+  /* Visible keyboard focus everywhere (mouse clicks don't trigger :focus-visible). */
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Type scale & spacing tokens. Fluid sizes via clamp() so headings scale smoothly
+   between phone and desktop instead of jumping at breakpoints.
+     text-display  homepage / landing heroes      36px -> 60px
+     text-h1       page titles                    36px -> 48px
+     text-h2       section titles                 30px -> 40px
+     text-h3       sub-section / CTA titles       24px -> 30px
+     section-y     padding for full-width bands   56px -> 80px
+     section-gap   space after a content section  56px -> 80px
+   --------------------------------------------------------------------------- */
+@utility text-display {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 1.5rem + 3.2vw, 3.75rem);
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+}
+@utility text-h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 1.85rem + 1.8vw, 3rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+}
+@utility text-h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.875rem, 1.6rem + 1.2vw, 2.5rem);
+  line-height: 1.18;
+  letter-spacing: -0.015em;
+}
+@utility text-h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 1.35rem + 0.6vw, 1.875rem);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+/* One vertical rhythm for the whole site: 56px on phones -> 80px on desktop. */
+@utility section-y {
+  padding-block: clamp(3.5rem, 2.75rem + 2.5vw, 5rem);
+}
+/* Full-width tinted band (used about once per page) to give long pages rhythm. */
+@utility section-band {
+  background-color: hsl(var(--muted) / 0.35);
+  border-block: 1px solid hsl(var(--border));
+  padding-block: clamp(3.5rem, 2.75rem + 2.5vw, 5rem);
+}
+/* Horizontally scrollable rows (chips, tabs) without a visible scrollbar. */
+@utility scrollbar-none {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+@utility section-gap {
+  margin-bottom: clamp(3.5rem, 2.75rem + 2.5vw, 5rem);
+}
+
+/* ---------------------------------------------------------------------------
+   Entrance animations (pure CSS; replaces the motion library).
+   They run without JavaScript, so prerendered content is visible as soon as the
+   stylesheet loads, and the reduced-motion rule below neutralises them.
+   --------------------------------------------------------------------------- */
+@keyframes fade-up { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+@keyframes fade-down { from { opacity: 0; transform: translateY(-12px); } to { opacity: 1; transform: none; } }
+@keyframes fade-from-left { from { opacity: 0; transform: translateX(-30px); } to { opacity: 1; transform: none; } }
+@keyframes fade-from-right { from { opacity: 0; transform: translateX(30px); } to { opacity: 1; transform: none; } }
+@keyframes fade-scale { from { opacity: 0; transform: scale(0.94); } to { opacity: 1; transform: none; } }
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slide-in-right { from { transform: translateX(100%); } to { transform: none; } }
+
+.animate-fade-up { animation: fade-up 0.5s ease-out both; }
+.animate-fade-down { animation: fade-down 0.3s ease-out both; }
+.animate-fade-from-left { animation: fade-from-left 0.6s ease-out both; }
+.animate-fade-from-right { animation: fade-from-right 0.6s ease-out both; }
+.animate-fade-scale { animation: fade-scale 0.4s ease-out both; }
+.animate-fade-in { animation: fade-in 0.3s ease-out both; }
+/* Home logo strip: two identical tracks side by side, slid left by one track width. */
+@keyframes tech-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.tech-marquee-track { animation: tech-marquee 45s linear infinite; }
+/* Hero capability rail progress bar (duration set inline). */
+@keyframes hud-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+.hud-progress { animation: hud-progress linear forwards; }
+.animate-slide-in-right { animation: slide-in-right 0.3s cubic-bezier(0.22, 1, 0.36, 1) both; }
+
+/* Scroll reveal: scroll-driven where supported (no JS); otherwise simply visible. */
+@supports (animation-timeline: view()) {
+  .reveal {
+    animation: fade-up linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 20%;
+  }
+}
+
+/* Respect users who ask the OS for less motion (covers every animation and transition). */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    /* No movement: entrance animations finish instantly, nothing slides or scales... */
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    /* ...but state feedback stays: colour, opacity and border changes still fade gently. */
+    transition-property: color, background-color, border-color, opacity, box-shadow, text-decoration-color !important;
+    transition-duration: 150ms !important;
+  }
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .glass {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, var(--brand-secondary-ink) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dark .text-gradient {
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, var(--brand-secondary-ink) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glow-teal {
+  box-shadow: 0 0 50px -12px rgba(76, 186, 171, 0.25);
+}
+
+.glow-amber {
+  box-shadow: 0 0 50px -12px rgba(249, 176, 30, 0.25);
+}
+
+.glow-primary {
+  box-shadow: 0 0 50px -10px hsl(var(--primary) / 0.28);
+}
+
+/* High-tech subtle grid pattern for light and dark hero/section depth */
+.bg-grid-pattern {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, hsl(var(--border) / 0.45) 1px, transparent 1px),
+    linear-gradient(to bottom, hsl(var(--border) / 0.45) 1px, transparent 1px);
+}
+
+/* Elevated cards that provide clean depth in both light and dark mode */
+.card-elevated {
+  background-color: hsl(var(--card));
+  border: 1px solid hsl(var(--border) / 0.85);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.03), 0 8px 24px -4px rgba(15, 23, 42, 0.06);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-elevated:hover {
+  border-color: hsl(var(--primary) / 0.5);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06), 0 20px 40px -8px rgba(15, 23, 42, 0.12);
+  transform: translateY(-3px);
+}
+
+.dark .card-elevated {
+  background-color: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.45);
+}
+
+.dark .card-elevated:hover {
+  border-color: hsl(var(--primary) / 0.55);
+  box-shadow: 0 20px 44px -14px rgba(0, 0, 0, 0.75);
+  transform: translateY(-3px);
+}
+
+.tech-card {
+  backdrop-filter: blur(12px);
+  background: hsl(var(--card) / 0.95);
+  border: 1px solid hsl(var(--border));
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03), 0 12px 32px -4px rgba(15, 23, 42, 0.08);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tech-card:hover {
+  border-color: hsl(var(--primary) / 0.6);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04), 0 24px 48px -8px rgba(15, 23, 42, 0.14);
+}
+
+.dark .tech-card {
+  background: hsl(var(--card) / 0.85);
+  border: 1px solid hsl(var(--border) / 0.8);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
+}
+
+.dark .tech-card:hover {
+  border-color: hsl(var(--primary) / 0.5);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+}

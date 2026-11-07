@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b4b"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" rx="16" fill="url(#bg3)"/>
+  <!-- Top bar -->
+  <rect x="0" y="0" width="800" height="48" fill="#1e1b4b" fill-opacity="0.8"/>
+  <circle cx="28" cy="24" r="5" fill="#ef4444"/>
+  <circle cx="44" cy="24" r="5" fill="#f59e0b"/>
+  <circle cx="60" cy="24" r="5" fill="#10b981"/>
+  <rect x="90" y="14" width="220" height="20" rx="6" fill="#312e81"/>
+  <text x="100" y="28" fill="#c7d2fe" font-family="system-ui, sans-serif" font-size="11" font-weight="600">AI Voice Booking · Google Calendar Sync</text>
+  <rect x="670" y="14" width="105" height="20" rx="10" fill="#6366f1" fill-opacity="0.2"/>
+  <text x="684" y="28" fill="#818cf8" font-family="system-ui, sans-serif" font-size="10" font-weight="700">PORT :3030</text>
+
+  <!-- Left Calendar View -->
+  <rect x="20" y="64" width="480" height="366" rx="14" fill="#0f172a" stroke="#312e81"/>
+  <text x="40" y="96" fill="#f8fafc" font-family="sans-serif" font-size="14" font-weight="700">Live Practice Calendar · Instant Slot Locking</text>
+  
+  <!-- Calendar Grid Header -->
+  <g transform="translate(40, 114)">
+    <rect x="0" y="0" width="80" height="28" rx="6" fill="#1e1b4b"/>
+    <text x="16" y="18" fill="#c7d2fe" font-family="sans-serif" font-size="11" font-weight="600">MON 12</text>
+    <rect x="88" y="0" width="80" height="28" rx="6" fill="#1e1b4b"/>
+    <text x="104" y="18" fill="#c7d2fe" font-family="sans-serif" font-size="11" font-weight="600">TUE 13</text>
+    <rect x="176" y="0" width="80" height="28" rx="6" fill="#4338ca"/>
+    <text x="188" y="18" fill="#ffffff" font-family="sans-serif" font-size="11" font-weight="700">TODAY</text>
+    <rect x="264" y="0" width="80" height="28" rx="6" fill="#1e1b4b"/>
+    <text x="280" y="18" fill="#c7d2fe" font-family="sans-serif" font-size="11" font-weight="600">THU 15</text>
+    <rect x="352" y="0" width="80" height="28" rx="6" fill="#1e1b4b"/>
+    <text x="370" y="18" fill="#c7d2fe" font-family="sans-serif" font-size="11" font-weight="600">FRI 16</text>
+  </g>
+
+  <!-- Time slots -->
+  <g transform="translate(40, 154)">
+    <!-- 09:00 AM -->
+    <text x="0" y="24" fill="#64748b" font-family="sans-serif" font-size="10">09:00 AM</text>
+    <rect x="60" y="8" width="372" height="32" rx="8" fill="#1e293b"/>
+    <text x="74" y="28" fill="#cbd5e1" font-family="sans-serif" font-size="11">Dr. Chen · Routine Cleaning (Confirmed via Voice)</text>
+
+    <!-- 11:30 AM Locked -->
+    <text x="0" y="70" fill="#64748b" font-family="sans-serif" font-size="10">11:30 AM</text>
+    <rect x="60" y="54" width="372" height="32" rx="8" fill="#4338ca" stroke="#818cf8"/>
+    <text x="74" y="74" fill="#ffffff" font-family="sans-serif" font-size="11" font-weight="600">🔒 Slot Locked: Inbound Caller Confirming (&lt;50ms Lock)</text>
+
+    <!-- 02:00 PM -->
+    <text x="0" y="116" fill="#64748b" font-family="sans-serif" font-size="10">02:00 PM</text>
+    <rect x="60" y="100" width="372" height="32" rx="8" fill="#1e293b"/>
+    <text x="74" y="120" fill="#cbd5e1" font-family="sans-serif" font-size="11">Dr. Chen · Emergency Extraction (After-Hours Booked)</text>
+
+    <!-- 04:30 PM Open -->
+    <text x="0" y="162" fill="#64748b" font-family="sans-serif" font-size="10">04:30 PM</text>
+    <rect x="60" y="146" width="372" height="32" rx="8" fill="#064e3b" stroke="#10b981" stroke-dasharray="4 2"/>
+    <text x="74" y="166" fill="#34d399" font-family="sans-serif" font-size="11 font-weight=600">✓ Open Slot Available for AI Voice Allocation</text>
+  </g>
+
+  <!-- Right Panel Telephony Telemetry -->
+  <rect x="520" y="64" width="260" height="366" rx="14" fill="#0f172a" stroke="#312e81"/>
+  <text x="540" y="96" fill="#f8fafc" font-family="sans-serif" font-size="13" font-weight="700">Telephony Stats</text>
+
+  <rect x="540" y="114" width="220" height="54" rx="8" fill="#1e1b4b"/>
+  <text x="552" y="132" fill="#c7d2fe" font-family="sans-serif" font-size="10">RESPONSE SPEED</text>
+  <text x="552" y="156" fill="#818cf8" font-family="sans-serif" font-size="18" font-weight="800">&lt; 48ms Sub-Second</text>
+
+  <rect x="540" y="176" width="220" height="54" rx="8" fill="#1e1b4b"/>
+  <text x="552" y="194" fill="#c7d2fe" font-family="sans-serif" font-size="10">DOUBLE-BOOKINGS</text>
+  <text x="552" y="218" fill="#10b981" font-family="sans-serif" font-size="18" font-weight="800">0.0% Guaranteed</text>
+
+  <rect x="540" y="238" width="220" height="54" rx="8" fill="#1e1b4b"/>
+  <text x="552" y="256" fill="#c7d2fe" font-family="sans-serif" font-size="10">AFTER-HOURS BOOKINGS</text>
+  <text x="552" y="280" fill="#38bdf8" font-family="sans-serif" font-size="18" font-weight="800">+38% Lift</text>
+
+  <rect x="540" y="310" width="220" height="56" rx="8" fill="#020617" stroke="#312e81"/>
+  <text x="552" y="328" fill="#94a3b8" font-family="sans-serif" font-size="9" font-weight="700">TWO-WAY SYNC DESTINATION</text>
+  <text x="552" y="344" fill="#f8fafc" font-family="sans-serif" font-size="10 font-weight=600">Google Calendar · Twilio SIP</text>
+  <text x="552" y="358" fill="#10b981" font-family="sans-serif" font-size="9">● Live Synchronization Active</text>
+
+  <rect x="540" y="380" width="220" height="34" rx="8" fill="#6366f1"/>
+  <text x="580" y="402" fill="#ffffff" font-family="sans-serif" font-size="11" font-weight="700">Test Booking (:3030)</text>
+</svg>

@@ -1,0 +1,16 @@
+# Internal Links
+
+| Source URL | Destination URL | Recommended Anchor Text | Placement Location on Source Page | Strategic Rationale | Priority |
+| --- | --- | --- | --- | --- | --- |
+| https://www.aiscripto.com/ (Home) | https://www.aiscripto.com/services/erp | ERP & CRM integration services | Solutions section / Enterprise automation paragraph | Channels massive homepage authority (PageRank) to the highest-potential commercial ERP page. | P1 |
+| https://www.aiscripto.com/ (Home) | https://www.aiscripto.com/services/ai | enterprise AI agent development | Hero value proposition & Services preview block | Passes homepage equity directly to AI service page currently ranking at Pos 3.64. | P1 |
+| https://www.aiscripto.com/ (Home) | https://www.aiscripto.com/services/software | custom software development company | Services overview grid | Builds link signals to restore the 404 custom software development equity. | P1 |
+| https://www.aiscripto.com/services/erp | https://www.aiscripto.com/services/software | custom software development for CRM and ERP | Overview paragraph (connecting legacy platforms) | Establishes topical co-occurrence for the exact long-tail GSC query (pos 82). | P1 |
+| https://www.aiscripto.com/services/erp | https://www.aiscripto.com/products/erp-financials | ERP Financials audit module | Technology integrations section | Bridges commercial consulting searchers to proprietary software live demo. | P2 |
+| https://www.aiscripto.com/services/ai | https://www.aiscripto.com/products/nexus-agent | NexusAgent autonomous workflow platform | Multi-Agent Systems feature card | Drives high-intent service evaluators into working SaaS product demonstrations. | P1 |
+| https://www.aiscripto.com/services/ai | https://www.aiscripto.com/products/ai-voice-booking | AI voice receptionist demo | Voice AI Agents capability card | Links voice AI service inquiries directly to the interactive voice booking demo. | P1 |
+| https://www.aiscripto.com/blog/cybersecurity-trends-to-watch-in-2026 | https://www.aiscripto.com/services/security | cybersecurity consulting and SOC 2 compliance services | Conclusion & recommended next steps paragraph | Converts ranking blog post (pos 9.0) into commercial audit consultation leads. | P1 |
+| https://www.aiscripto.com/case-studies/ai-event-registration-services | https://www.aiscripto.com/services/software | custom event software and API integration | Approach and technology section | Connects ranking case study (pos 55) back to core custom engineering service. | P2 |
+| https://www.aiscripto.com/industries/healthcare | https://www.aiscripto.com/case-studies/medical-health-patient-platform | CareBridge medical intake case study | Solutions / EHR integration section | Validates industry claims with concrete case study proof and data metrics. | P2 |
+| https://www.aiscripto.com/industries/retail | https://www.aiscripto.com/products/pos-restaurant | smart restaurant and retail POS platform | Omnichannel commerce solution card | Creates direct product link from industry hub to relevant point-of-sale software. | P2 |
+| https://www.aiscripto.com/about | https://www.aiscripto.com/global | global offices in Washington, California, and the UK | Our Reach section | Strengthens geographic footprint links between corporate entity pages. | P3 |

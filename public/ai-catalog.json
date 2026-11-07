@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "name": "AIScripto AI Catalog",
+  "description": "Autonomous AI voice agents, point-of-sale systems, and business intelligence applications.",
+  "url": "https://www.aiscripto.com",
+  "provider": {
+    "name": "AIScripto",
+    "url": "https://www.aiscripto.com"
+  },
+  "items": [
+    {
+      "id": "business-analytics-ai",
+      "name": "Business Analytics AI",
+      "description": "Autonomous EBITDA Defense & Zero-Code Loss Prevention Wrapper",
+      "url": "https://www.aiscripto.com/products/business-analytics-ai"
+    },
+    {
+      "id": "nexus-agent",
+      "name": "Nexus Agent",
+      "description": "Voice-First Customer Receptionist & Incident Management Command Center",
+      "url": "https://www.aiscripto.com/products/nexus-agent"
+    },
+    {
+      "id": "ai-voice-booking",
+      "name": "AI Voice Booking Agent",
+      "description": "Zero-Wait Multi-Language Voice Appointment Booking with Direct Calendar Sync",
+      "url": "https://www.aiscripto.com/products/ai-voice-booking"
+    },
+    {
+      "id": "pos-fast-food",
+      "name": "POS (FF)",
+      "description": "High-Speed Quick Service Point of Sale with Offline Transaction Queuing",
+      "url": "https://www.aiscripto.com/products/pos-fast-food"
+    },
+    {
+      "id": "pos-restaurant",
+      "name": "POS (RES)",
+      "description": "Full-Service Restaurant Point of Sale, Table Management & Kitchen Display",
+      "url": "https://www.aiscripto.com/products/pos-restaurant"
+    },
+    {
+      "id": "ai-agent-web",
+      "name": "AI Agent Web",
+      "description": "24/7 Smart Website Assistant That Engages Visitors and Converts Traffic Into Sales",
+      "url": "https://www.aiscripto.com/products/ai-agent-web"
+    },
+    {
+      "id": "erp-financials",
+      "name": "ERP",
+      "description": "Auditable Double-Entry Financial Engine with Universal Voucher Control & Atomic GL Bridge",
+      "url": "https://www.aiscripto.com/products/erp-financials"
+    }
+  ]
+}

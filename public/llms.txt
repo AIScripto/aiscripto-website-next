@@ -1,0 +1,64 @@
+# AIScripto
+
+> Practical AI Products That Solve Real Business Problems. Autonomous voice agents, offline-first POS systems, and enterprise intelligence software.
+
+## Primary Resources
+
+- [Home](https://www.aiscripto.com/): Official homepage and platform overview.
+- [Products](https://www.aiscripto.com/products): Autonomous AI products and enterprise systems catalog.
+- [Live Demos](https://www.aiscripto.com/live-demos): Try every AIScripto product in a live environment.
+- [Services](https://www.aiscripto.com/services): Custom AI development, DevOps automation, and enterprise integrations.
+- [Case Studies](https://www.aiscripto.com/case-studies): Real-world deployment benchmarks and ROI metrics.
+- [About](https://www.aiscripto.com/about): Company mission, executive engineering team, and technology architecture.
+- [Contact](https://www.aiscripto.com/contact): Get in touch for architectural briefings and product pilots.
+
+## Products
+
+- [Business Analytics AI](https://www.aiscripto.com/products/business-analytics-ai): Zero-code loss prevention overlay and statistical outlier radar.
+- [Nexus Agent](https://www.aiscripto.com/products/nexus-agent): 24/7 duplex voice intelligence receptionist and SLA incident center.
+- [AI Voice Booking Agent](https://www.aiscripto.com/products/ai-voice-booking): Real-time conversational appointment scheduling with zero double-booking guarantee.
+- [POS Fast Food](https://www.aiscripto.com/products/pos-fast-food): High-speed counter ordering with offline payment queue.
+- [POS Restaurant](https://www.aiscripto.com/products/pos-restaurant): Dining room floor plans, table management, and Kitchen Display Systems.
+- [AI Agent Web](https://www.aiscripto.com/products/ai-agent-web): Website voice & text concierge with knowledge base search.
+- [ERP Financial Core](https://www.aiscripto.com/products/erp-financials): Auditable double-entry accounting engine and universal voucher keys.
+
+## Services
+
+- [AI Agents & Automation](https://www.aiscripto.com/services/ai): Production autonomous AI agents, multi-agent workflows and RAG systems connected to business systems.
+- [Custom AI Chatbot Development](https://www.aiscripto.com/services/ai-chatbot-development): Chatbots built on your own data, workflows and brand.
+- [Custom CRM Development](https://www.aiscripto.com/services/custom-crm-development): CRMs built around your sales process, with AI assistance.
+- [ERP Integration](https://www.aiscripto.com/services/erp): Bidirectional ERP, accounting and CRM integration (Infor, Odoo, Salesforce, Agicap).
+- [Custom Software Engineering](https://www.aiscripto.com/services/software): Web applications, SaaS platforms and internal tools.
+- [Cloud Solutions & Migration](https://www.aiscripto.com/services/cloud): AWS, Azure and GCP migration and FinOps cost optimisation.
+- [DevOps & SRE](https://www.aiscripto.com/services/devops): CI/CD, Kubernetes and reliability engineering.
+- [Cybersecurity & Compliance](https://www.aiscripto.com/services/security): Penetration testing, cloud security audits, SOC 2 and ISO 27001 readiness.
+
+## Solutions
+
+- [AI Receptionist for HVAC Companies](https://www.aiscripto.com/solutions/ai-receptionist-for-hvac): 24/7 AI call answering and emergency dispatch for HVAC businesses.
+
+## Industries
+
+- [Banking & Finance](https://www.aiscripto.com/industries/banking)
+- [Retail & E-commerce](https://www.aiscripto.com/industries/retail)
+- [Telecommunications](https://www.aiscripto.com/industries/telecom)
+- [Healthcare](https://www.aiscripto.com/industries/healthcare)
+- [Energy & Utilities](https://www.aiscripto.com/industries/energy)
+- [Public Sector](https://www.aiscripto.com/industries/public-sector)
+
+## Guides
+
+- [Grounded Enterprise RAG Chatbots](https://www.aiscripto.com/blog/building-enterprise-ai-chatbots-rag)
+- [Architecting Production AI Agents with LangGraph](https://www.aiscripto.com/blog/architecting-autonomous-ai-agents-langgraph)
+- [How AI Voice Receptionists Work](https://www.aiscripto.com/blog/duplex-ai-voice-receptionist-telephony)
+- [AI Voice Booking Agents and No-Shows](https://www.aiscripto.com/blog/conversational-ai-voice-booking-systems)
+- [A Practical Roadmap for ERP and CRM Integration](https://www.aiscripto.com/blog/erp-crm-integration-roadmap)
+- [AI-Powered ERP Reconciliation & Invoice OCR](https://www.aiscripto.com/blog/ai-erp-financial-automation-accounting)
+- [Cloud Migration: 5 Common Pitfalls](https://www.aiscripto.com/blog/cloud-migration-pitfalls-to-avoid)
+- [All articles](https://www.aiscripto.com/blog)
+
+## Company
+
+- [About AIScripto](https://www.aiscripto.com/about)
+- [Global Offices](https://www.aiscripto.com/global)
+- [Careers](https://www.aiscripto.com/careers)
